@@ -1,23 +1,19 @@
-# NOAA Weather Current Conditions
+# NOAA Weather Current Observations
 
-This is a simple PHP script that pulls in the NOAA Weather hourly observations
-for the city of your choice so that the information can be displyed on your website.
+This is a simple PHP function that utilizes the NOAA Weather hourly observations
+for the city of your choice and displays that information on your existing PHP website.
 
 Here is a sample image:
 
-![Sample Image](image_URL)
+![Sample Image](https://github.com/tidbitsoftech/NOAA_Current_Observations/raw/master/sample-image.PNG)
 
 ### To Setup
 
-This script is written with the intention that the XML file is downloaded from NOAA outside
-of this script. I would recommend setting up a cron job and using cURL to fetch the file.
-I have included a shell script that can be used as a temple (get_wether.sh), or you can write you own.
-
-1. In the configurations file, *noaa-current.conf.php*, set `$xml_file_location` to the directory
-the XML file is located.
-2. Set `$obs_station` to the four-letter station ID of the NOAA weather
-station serving your area.
-3. In some cases the observed city provided in the feed is real long or isn't what you want
+1. The NOAA XML file is downloaded using the *get_weather.sh* script.  It should be set up to run as a cron job to get the file
+from NOAA at 15-17 minutes past each hour.  You will need to configure the NOAA stationID along with the location
+you want the XML file to be saved on your server.
+1. In the configurations file, *noaa-current.conf.php*, set `$noaa_xml_file` to the full path where the XML file is located.
+1. In some cases the observed city provided in the feed is real long or may not be what you want
 displayed. In this case, uncomment the `$obs_city` variable in the conf file, provide the name you want,
 and then comment the `$obs_city` variable in the *noaa-current.php* file.
 

@@ -3,12 +3,8 @@
     # Configuraton file for the NOAA Current Conditions script.
     #===============================================================
 
-    # File location of the XML file from NOAA.
-	$xml_file_location = "/path/to/xml/file/";
-
-    # The symbol of the observation station.
-	# You can find the a list of stations from here: https://w1.weather.gov/xml/current_obs/
-	$obs_station = "KDFW";
+    # Full Path to the XML file from NOAA.
+	$noaa_xml_file = "/path/to/KDFW.xml";
 
     # If the city in the XML file isn't what you want, you can manually set it
 	# by uncommeting $obs_city here and commenting the one in the $xml list.

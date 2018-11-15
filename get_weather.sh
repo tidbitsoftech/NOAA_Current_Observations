@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Script to pull hourly weather conditions.
+# Shell script to pull hourly weather conditions from NOAA.
 # Run this as a cron job hourly @ 16 minutes past the hour.
 #===================================================================
 
@@ -8,12 +8,12 @@
 NOAA_STATION_ID="KDFW"
 
 # Set the full URL to retrive the XML file
-FILE_TO_GET="http://w1.weather.gov/xml/current_obs/$NOAA_STATION_ID.xml"
+FILE_TO_GET="https://w1.weather.gov/xml/current_obs/$NOAA_STATION_ID.xml"
 
 # Define where we want to save the downloaded file
 OUTPUT_FILE="/path/to/file/$NOAA_STATION_ID.xml"
 
-# User-agent - NOAA will not allow downloads with a user agent being specified.
+# User-agent - NOAA will not allow downloads without a user agent being specified.
 USER_AGENT="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0"
 
 # Log File (not currently used)
